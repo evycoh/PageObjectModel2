@@ -1,5 +1,6 @@
 package helper.factories;
 
+import helper.constants.FrameworkConstants;
 import helper.driver.DriverManager;
 import helper.enums.WaitStrategy;
 import org.openqa.selenium.By;;
@@ -34,10 +35,10 @@ public class ExplicitWaitFactory {
 
 
     protected  static WebDriverWait getWait(){
-        WebDriverWait wait=new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(15));
+        WebDriverWait wait=new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(FrameworkConstants.getExplicitWait()));
         wait.ignoring(StaleElementReferenceException.class);
         wait.ignoring(NoSuchElementException.class);
-        wait.pollingEvery(Duration.ofMillis(150));
+        wait.pollingEvery(Duration.ofMillis(FrameworkConstants.getExplicitMilliSecWait()));
         return wait;
 
     }

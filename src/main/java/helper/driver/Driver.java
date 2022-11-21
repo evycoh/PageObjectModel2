@@ -1,5 +1,6 @@
 package helper.driver;
 
+import helper.constants.FrameworkConstants;
 import helper.enums.ConfigProperties;
 import helper.factories.BrowserFactory;
 import helper.utils.PropertyUtils;
@@ -15,8 +16,8 @@ public class Driver {
     public static void initDriver(){
         if(Objects.isNull(DriverManager.getDriver())){
             DriverManager.setDriver(BrowserFactory.setBrowser());
-            DriverManager.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
-            DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+            DriverManager.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(FrameworkConstants.getPageLoadTime()));
+            DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(FrameworkConstants.getImplicitWait()));
             DriverManager.getDriver().manage().window().maximize();
             DriverManager.getDriver().get(PropertyUtils.getValue(ConfigProperties.URL));
 
