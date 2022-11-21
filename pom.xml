@@ -7,14 +7,20 @@
     <groupId>org.example</groupId>
     <artifactId>PageObjectModel2</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <dependencies>
 
+    <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
             <version>4.6.0</version>
         </dependency>
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>5.3.0</version>
+    </dependency>
     </dependencies>
+
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
