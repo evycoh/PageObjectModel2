@@ -1,6 +1,7 @@
 package helper.driver;
 
 import helper.enums.ConfigProperties;
+import helper.factories.BrowserFactory;
 import helper.utils.PropertyUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +14,7 @@ public class Driver {
 
     public static void initDriver(){
         if(Objects.isNull(DriverManager.getDriver())){
-            WebDriver driver=WebDriverManager.chromedriver().create();
-            DriverManager.setDriver(driver);
+            DriverManager.setDriver(BrowserFactory.setBrowser());
             DriverManager.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
             DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
             DriverManager.getDriver().manage().window().maximize();

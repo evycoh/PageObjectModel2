@@ -11,9 +11,9 @@ public class BrowserFactory {
 
 
     public static WebDriver  setBrowser()  {
-        String browser= "chrome";
+        String browser= PropertyUtils.getValue(ConfigProperties.BROWSER);
         if(browser.equalsIgnoreCase("chrome")){
-            driver= WebDriverManager.chromiumdriver().create();
+            driver=WebDriverManager.chromedriver().create();
         }
         else if(browser.equalsIgnoreCase("firefox")){
             driver=WebDriverManager.firefoxdriver().create();
