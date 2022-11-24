@@ -5,8 +5,8 @@ import helper.utils.PropertyUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 
-public class BrowserFactory {
-    private BrowserFactory(){}
+public class DriverFactory {
+    private DriverFactory(){}
     private static WebDriver driver=null;
 
 

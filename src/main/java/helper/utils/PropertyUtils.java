@@ -39,7 +39,11 @@ public class PropertyUtils {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-        }  return CONFIGMAP.get(key.name().toLowerCase());
+        }     return CONFIGMAP.get(key.name().toLowerCase());
+    }
+
+    public static void main(String[] args) {
+        System.out.println(PropertyUtils.getValue(ConfigProperties.FAIL_SCREENSHOT));
     }
 
 
