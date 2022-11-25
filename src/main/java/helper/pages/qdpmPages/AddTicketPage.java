@@ -51,8 +51,8 @@ public class AddTicketPage extends BasePage {
         selectMultipleCheckbox(this.notifyTo,"notifyTo",value);
         return this;
     }
-    public AddTicketPage clickSaveBtn(){
+    public TicketPage clickSaveBtn(){
         click(this.saveBtn,"saveBtn");
-        return this;
+        return new TicketPage();
     }
 }

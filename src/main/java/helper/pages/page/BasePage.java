@@ -1,5 +1,6 @@
 package helper.pages.page;
 
+import helper.driver.DriverManager;
 import helper.enums.WaitStrategy;
 import helper.factories.ExplicitWaitFactory;
 import helper.reports.ExtentLogger;
@@ -11,6 +12,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BasePage extends Page{
+    @Override
+    protected String getTitle() {
+        String title = null;
+        try{
+             title= DriverManager.getDriver().getTitle();
+            ExtentLogger.pass("Page Title: "+title);
+        }catch (Exception e){
+            e.printStackTrace();
+            ExtentLogger.fail("Unable To Locate Page Title");
+        }return title;
+    }
+
     @Override
     protected void sendKeys(By by, String value, String fieldName) {
         try{

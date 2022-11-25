@@ -59,9 +59,9 @@ public class AddTaskPage extends BasePage {
         sendKeys(this.createdBy,createdBy,"createdBy");
         return this;
     }
-    public AddTaskPage clickSaveBtn(){
+    public TaskPage clickSaveBtn(){
         click(this.saveBtn,"saveButton");
-        return this;
+        return new TaskPage();
     }
 
 

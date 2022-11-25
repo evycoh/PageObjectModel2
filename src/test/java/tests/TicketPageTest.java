@@ -3,8 +3,10 @@ package tests;
 import helper.pages.qdpmPages.AddTicketPage;
 import helper.pages.qdpmPages.DashBoardPage;
 import helper.pages.qdpmPages.LoginPage;
+import helper.pages.qdpmPages.TicketPage;
 import helper.reports.ListenerTestNG;
 import helper.utils.DataUtils;
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -17,7 +19,7 @@ public class TicketPageTest extends TestBase{
         DashBoardPage dashBoardPage = new LoginPage().setEmail("administrator@localhost.com").setPassword("administrator").clickLogin();
         dashBoardPage.selectMainMenu("Tickets").selectSubMenu("Add Ticket");
         AddTicketPage addTicketPage=new AddTicketPage();
-        addTicketPage
+       TicketPage ticketPage= addTicketPage
                 .setProjectName(pn)
                 .setDepartment(dep)
                 .setType(type)
@@ -27,6 +29,7 @@ public class TicketPageTest extends TestBase{
                 .setCreatedBy(createdBy)
                 .notifyTo("admin","client")
                 .clickSaveBtn();
+        Assert.assertEquals(ticketPage.getPageTitle(),"qdPM | Tickets");
 
     }
 }

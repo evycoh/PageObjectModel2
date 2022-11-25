@@ -19,7 +19,7 @@ public class TaskPageTest extends TestBase {
         DashBoardPage dashBoardPage = new LoginPage().setEmail("administrator@localhost.com").setPassword("administrator").clickLogin();
         dashBoardPage.selectMainMenu("Tasks").selectSubMenu("Add Task");
         AddTaskPage addTaskPage = new AddTaskPage();
-        addTaskPage
+       TaskPage taskPage= addTaskPage
                 .setProjectName(pn)
                 .setType(type)
                 .setName(name)
@@ -30,6 +30,8 @@ public class TaskPageTest extends TestBase {
                 .setDescription(description)
                 .setCreatedBy(createdBy)
                 .clickSaveBtn();
+       Assert.assertTrue(taskPage.taskFilterStatus());
+
     }
 
 

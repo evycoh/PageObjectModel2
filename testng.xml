@@ -9,7 +9,6 @@
             <class name="tests.loginTest"/>
             <class name="tests.TaskPageTest"></class>
             <class name="tests.TicketPageTest"></class>
-
         </classes>
     </test>
 </suite>
